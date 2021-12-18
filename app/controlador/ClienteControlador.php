@@ -51,9 +51,12 @@
             $listaDeParametros = $request->getParsedBody();
             $id = $args['id'];
 
+            //Normalizar dato
+            $nombre = ucwords($listaDeParametros['nombre']);
+
             $Cliente = new Cliente();
             $Cliente->setId($id);
-            $Cliente->setNombre($listaDeParametros['nombre']);
+            $Cliente->setNombre($nombre);
             
             if($Cliente->actualizarNombre()){
                 $respuesta = array('estado' => true, 'mensaje' => 'Cambio realizado correctamente');
@@ -70,9 +73,12 @@
             $listaDeParametros = $request->getParsedBody();
             $id = $args['id'];
 
+            //Normalizar dato
+            $apellido = ucwords($listaDeParametros['apellido']);
+
             $Cliente = new Cliente();
             $Cliente->setId($id);
-            $Cliente->setApellido($listaDeParametros['apellido']);
+            $Cliente->setApellido($apellido);
             
             if($Cliente->actualizarApellido()){
                 $respuesta = array('estado' => true, 'mensaje' => 'Cambio realizado correctamente');
