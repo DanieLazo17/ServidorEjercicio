@@ -40,7 +40,7 @@
                 $respuesta = array('estado' => true, 'mensaje' => 'Cambio realizado correctamente');
             }
             else{
-                $respuesta = array('estado' => false, 'mensaje' => 'Cambio realizado correctamente');
+                $respuesta = array('estado' => false, 'mensaje' => 'Cambio no realizado');
             }
 
             $response->getBody()->write( json_encode($respuesta) );
@@ -62,7 +62,7 @@
                 $respuesta = array('estado' => true, 'mensaje' => 'Cambio realizado correctamente');
             }
             else{
-                $respuesta = array('estado' => false, 'mensaje' => 'Cambio realizado correctamente');
+                $respuesta = array('estado' => false, 'mensaje' => 'Cambio no realizado');
             }
 
             $response->getBody()->write( json_encode($respuesta) );
@@ -84,7 +84,7 @@
                 $respuesta = array('estado' => true, 'mensaje' => 'Cambio realizado correctamente');
             }
             else{
-                $respuesta = array('estado' => false, 'mensaje' => 'Cambio realizado correctamente');
+                $respuesta = array('estado' => false, 'mensaje' => 'Cambio no realizado');
             }
 
             $response->getBody()->write( json_encode($respuesta) );
@@ -103,7 +103,7 @@
                 $respuesta = array('estado' => true, 'mensaje' => 'Cambio realizado correctamente');
             }
             else{
-                $respuesta = array('estado' => false, 'mensaje' => 'Cambio realizado correctamente');
+                $respuesta = array('estado' => false, 'mensaje' => 'Cambio no realizado');
             }
 
             $response->getBody()->write( json_encode($respuesta) );
