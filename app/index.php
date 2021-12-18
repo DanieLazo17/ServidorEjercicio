@@ -25,22 +25,11 @@
 
     // Habilitar CORS
     $app->add(function (Request $request, RequestHandlerInterface $handler): Response {
-        // $routeContext = RouteContext::fromRequest($request);
-        // $routingResults = $routeContext->getRoutingResults();
-        // $methods = $routingResults->getAllowedMethods();
-        
         $response = $handler->handle($request);
-    
-        $requestHeaders = $request->getHeaderLine('Access-Control-Request-Headers');
-    
-        $response = $response->withHeader('Access-Control-Allow-Origin', '*');
-        $response = $response->withHeader('Access-Control-Allow-Methods', 'get,post,put,delete');
-        $response = $response->withHeader('Access-Control-Allow-Headers', $requestHeaders);
-    
-        // Optional: Allow Ajax CORS requests with Authorization header
-        // $response = $response->withHeader('Access-Control-Allow-Credentials', 'true');
-    
-        return $response;
+        return $response
+            ->withHeader('Access-Control-Allow-Origin', 'http://localhost:4200/')
+            ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
+            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     });
 
     $app->group("/Usuario", function (RouteCollectorProxy $grupoUsuario) {
