@@ -51,7 +51,7 @@
     $app->group("/Cliente", function (RouteCollectorProxy $grupoCliente) {
         $grupoCliente->post('/Informacion/{id}[/]', \ClienteControlador::class . ':TraerInfo' );
         $grupoCliente->post('/Correo/{id}[/]', \ClienteControlador::class . ':ActualizarEmail' );
-        $grupoCliente->put('/Nombre/{id}[/]', \ClienteControlador::class . ':ActualizarNombre' );
+        $grupoCliente->post('/Nombre/{id}[/]', \ClienteControlador::class . ':ActualizarNombre' );
         $grupoCliente->post('/Apellido/{id}[/]', \ClienteControlador::class . ':ActualizarApellido' );
         $grupoCliente->post('/DNI/{id}[/]', \ClienteControlador::class . ':ActualizarDNI' );
     });
